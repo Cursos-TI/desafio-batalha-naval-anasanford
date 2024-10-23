@@ -1,12 +1,11 @@
 #include <stdio.h>
 
-// Desafio Batalha Naval - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
-// Siga os comentários para implementar cada parte do desafio.
+#define LINHAS 10
+#define COLUNAS 10
 
 int main() {
 
-    int tabuleiro[10][10] = { //matriz do tabuleiro; 3 = indica a presença de navio
+    int tabuleiro[LINHAS][COLUNAS] = { //matriz do tabuleiro; 3 = indica a presença de navio
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 3},
         {0, 0, 0, 0, 0, 0, 0, 0, 3, 0},
         {0, 3, 0, 3, 0, 0, 0, 3, 0, 0},
@@ -19,14 +18,44 @@ int main() {
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
     };
 
-    for(int x = 0; x < 10; x++) { //x = posição na linha
-        for(int y = 0; y < 10; y++) { //y = posição na coluna
+    //mostrando o tabuleiro
+    printf("--- Tabuleiro ---\n");
+    for(int x = 0; x < LINHAS; x++) { //x = posição na linha
+        for(int y = 0; y < COLUNAS; y++) { //y = posição na coluna
             printf("%d ", tabuleiro[x][y]);
         }
         printf(" \n");
     }
 
-    // Nível Mestre - Habilidades Especiais com Matrizes
+    //mostrando as habilidades:
+    printf("--- Habilidades ---\n");
+
+    printf("- CONE -\n");
+    for(int x = 0; x < LINHAS; x++) {
+        for(int y = 0; y < COLUNAS; y++) {
+            //?????????????????????????????????????????????????????????
+        }
+    }
+
+    printf("- CRUZ -\n");
+    int matrizCruz[LINHAS][COLUNAS];
+    for(int x = 0; x < LINHAS; x++) {
+        for(int y = 0; y < COLUNAS; y++) {
+            int meio = COLUNAS/2 - 1; //definindo o ponto central
+            matrizCruz[meio][y] = 1; // coluna "central"
+            matrizCruz[x][meio] = 1; //linha "central"
+            printf("%d ", matrizCruz[x][y]);
+        }
+        printf("\n");
+    }
+    
+    printf("- OCTAEDRO -\n");
+    //?????????????????????????????????????????????????????????
+
+
+
+    
+    // Habilidades Especiais com Matrizes
     // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
     // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
     // Sugestão: Exiba o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas atingidas.
